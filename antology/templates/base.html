@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'base_page' %}">
+                    <img src="/static/images/hl_logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+                    GeneOntology_test_project
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contacts' %}">Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+{% block login_form %}
+
+{% endblock %}
+
+
+{% for pheno in menu %}
+<p><a href="{% url 'gene' pheno.slug %}">{{ pheno.pheno }}</a></p>
+{% if not forloop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+
+
+<p>{{ url_list|join:" | " }}</p>
+
+
+
+{% for pheno in menu %}
+<p><a href="{{ pheno.get_absolute_url }}">{{ pheno.pheno }}</a></p>
+{% if not forloop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+
+{% block gene %}
+
+{% endblock %}
+
+{% block about %}
+{% endblock %}
+
+{% block add %}
+{% endblock %}
+
+
+{% block info_table %}
+{% endblock info_table %}
+
+
+{% block contacts %}
+{% endblock contacts %}
+
+
+
+
+</body>
+</html>

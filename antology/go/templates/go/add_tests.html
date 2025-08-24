@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests!</title>
+</head>
+<body>
+<form action="">
+    <input type="text">
+</form>
+
+<form action="" method="get">
+    <label for="id_1">Тестовое_текстовое_поле: <input type="text" id="id_1" name="name_of_text"></label>
+    <button type="submit">Отправить</button>
+</form>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type = "submit">Добавить</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block gene %}
+<h1><a href="{% url 'add' %}">Добавить информацию</a></h1>
+<h1>{{ pheno_slug }}</h1>
+
+{% for gene, rs_list in genes.items %}
+<p>{{ gene }}</p>
+<p>{{ rs_list|join:" | "}}</p>
+<p></p>
+{% if not forloop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+{% include 'go/includes/nav.html' %}
+
+{% endblock %}

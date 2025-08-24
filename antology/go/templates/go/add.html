@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block add %}
+
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    {% buttons %}
+    <lable for="phenotype">Choise phenotype
+        <input id="phenotype" type="text" name="pheno">
+    </lable></p>
+    <lable for="gene">Input new gene
+        <input id="gene" type="text" name="gene">
+    </lable></p>
+    <p><button type="submit">Send</button></p>
+    {% endbuttons %}
+
+
+
+
+
+
+</form>
+
+{% include 'go/includes/nav.html' %}
+
+{% endblock %}

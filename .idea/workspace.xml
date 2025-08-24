@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a855cb5-9781-48f9-ac41-23ff097ec3ef" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/antology/go/templates/go/base1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/antology/go/templates/go/genes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/antology/go/templates/go/includes/nav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/antology/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/antology/antology/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/antology/antology/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/antology/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/antology/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/antology/go/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/antology/go/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/antology/go/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/antology/go/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/antology/go/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/antology/go/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -35,16 +39,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.antology.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/creck/Documents/my_django_projects/test_antology&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.antology.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/creck/Documents/my_django_projects/test_antology/antology/go/templates/go",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/antology/go/templates/go" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/antology/go/templates/go" />
+      <recent name="$PROJECT_DIR$/antology" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="antology" type="PythonConfigurationType" factoryName="Python">
       <module name="test_antology" />

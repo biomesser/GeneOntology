@@ -1,14 +1,23 @@
 from django.db import models
+from django.urls import reverse
+
 
 # Create your models here.
 class Phenotype(models.Model):
     pheno = models.CharField(max_length=30)
-    time_create=models.DateTimeField(auto_now_add=True)
-    time_update=models.DateTimeField(auto_now=True)
-    slug=models.SlugField(max_length=30, db_index=True, verbose_name='URL_pheno', unique=True)
+    time_create = models.DateTimeField(auto_now_add=True)
+    time_update = models.DateTimeField(auto_now=True)
+    slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_pheno', unique=True)
 
     def __str__(self):
         return self.pheno
+
+    def get_absolute_url(self):
+        return reverse('gene', kwargs={'ph_slug': self.slug})
+
+    class Meta:
+        verbose_name = 'Phenotype'
+        verbose_name_plural = 'Phenotypes'
 
 class Genes(models.Model):
     gene=models.CharField(max_length=30)
@@ -17,6 +26,8 @@ class Genes(models.Model):
     slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_gene', unique=True)
     link_to_pheno = models.ManyToManyField(Phenotype, blank=True, related_name='link_pheno')
     gene_source = models.OneToOneField('Transcripts', on_delete=models.PROTECT, null=True, blank=True, related_name='tr_of_gene')
+
+
 
 
     def __str__(self):
@@ -46,3 +57,6 @@ class Transcripts(models.Model):
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
     slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_tr', unique=True)
+
+    def __str__(self):
+        return self.tr_name

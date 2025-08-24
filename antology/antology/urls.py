@@ -16,11 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+admin.site.site_header = "Панель администрирования"
+admin.site.index_title = "Тестовый сайт по генным онтологиям"
 
 from go import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', views.about, name='about'),
+    path('', views.base_page, name='base_page'),
     path('go/', include('go.urls')),
+    path('users/', include('users.urls', namespace="users")),
+
 ]
