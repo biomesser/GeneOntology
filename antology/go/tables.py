@@ -4,6 +4,7 @@ from .models import Genes
 
 class GenesTable(tables.Table):
     class Meta:
+        orderable = False
         model = Genes
         template_name = "django_tables2/bootstrap5.html"
-        fields = ('gene', 'link_to_pheno', 'gene_source',)
+        fields = ('gene', 'link_to_pheno', 'transcript',)

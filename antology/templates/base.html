@@ -5,6 +5,16 @@
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+
     <meta charset="UTF-8">
     <title>{{ title }}</title>
 </head>
@@ -13,10 +23,18 @@
 <header>
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'base_page' %}">
-                    <img src="/static/images/hl_logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
-                    GeneOntology_test_project
+                <a class="navbar-brand" href="{% url 'js_info_table' %}">
+                    <img src="/static/images/hl_orange_logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+                    GeneOntology_by_JS_DataTables
                 </a>
+
+                <a class="navbar-brand" href="{% url 'info_table' %}">
+                    <img src="/static/images/hl_logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+                    GeneOntology_by_datatables2
+                </a>
+
+
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -26,7 +44,10 @@
                             <a class="nav-link active" aria-current="page" href="#">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="{% url 'about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add' %}">Add_data</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'contacts' %}">Contacts</a>
@@ -36,6 +57,8 @@
             </div>
         </nav>
     </header>
+
+<div class="container px-3">
 
 
 {% block login_form %}
@@ -63,14 +86,16 @@
 {% endfor %}
 
 {% block gene %}
-
 {% endblock %}
+
 
 {% block about %}
 {% endblock %}
 
+
 {% block add %}
 {% endblock %}
+
 
 
 {% block info_table %}
@@ -81,7 +106,10 @@
 {% endblock contacts %}
 
 
+{% block js_table %}
+{% endblock js_table %}
 
+</div>
 
 </body>
 </html>

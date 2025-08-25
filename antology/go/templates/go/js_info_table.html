@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block js_table %}
+
+
+
+<table id="mytable">
+    <thead>
+        <tr>
+            <th>Gene_name</th>
+            <th>rs_id</th>
+            <th>Phenotype</th>
+            <th>Transcript</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for line in db_data %}
+        <tr>
+            <td>{{ line.gene }}</td>
+            {% if line.rsset.all %}
+                <td>{{ line.rsset.all|join:" , " }}</td>
+            {% endif %}
+            {% if not line.rsset.all %}
+                <td class="text-danger">No data</td>
+            {% endif %}
+
+            {% if line.link_to_pheno.all %}
+                <td>{{ line.link_to_pheno.all|join:" , " }}</td>
+            {% endif %}
+            {% if not line.link_to_pheno.all %}
+                <td class="text-danger">No data</td>
+            {% endif %}
+
+            {% if line.transcript %}
+                <td>{{ line.transcript }}</td>
+            {% endif %}
+            {% if not line.transcript %}
+                <td class="text-danger">No data</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+$(document).ready(function() {
+    $('#mytable').DataTable({
+    pageLenght: 5,
+    lengthMenu: [10, 25, 50, 100],
+    responsive: true,
+    language: {
+    url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/ru.json'
+    },
+    dom: 'Bfrtip',
+    buttons: ['copy', 'excel','pdf']
+    });
+});
+</script>
+
+
+{% endblock js_table %}

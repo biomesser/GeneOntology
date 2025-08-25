@@ -25,13 +25,14 @@ class Genes(models.Model):
     time_update=models.DateTimeField(auto_now=True)
     slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_gene', unique=True)
     link_to_pheno = models.ManyToManyField(Phenotype, blank=True, related_name='link_pheno')
-    gene_source = models.OneToOneField('Transcripts', on_delete=models.PROTECT, null=True, blank=True, related_name='tr_of_gene')
-
-
+    transcript = models.OneToOneField('Transcripts', on_delete=models.PROTECT, null=True, blank=True, related_name='tr_of_gene')
 
 
     def __str__(self):
         return self.gene
+
+
+
 class Rs(models.Model):
     rs_name=models.CharField(max_length=30)
     time_create = models.DateTimeField(auto_now_add=True)

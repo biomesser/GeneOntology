@@ -22,6 +22,10 @@ def info_table(request):
     return render(request, "go/info_table.html", {"model": model, "table": table})
 
 
+def js_info_table(request):
+    db_data = Genes.objects.all()
+    return render(request, "go/js_info_table.html", {"title":"JS_table", "db_data": db_data})
+
 
 def about(request):
     print('!!!!!!!!')
