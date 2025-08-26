@@ -1,9 +1,9 @@
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.utils.text import slugify
 
-from .forms import AddBioInfo
+from .forms import AddBioInfo, AddGeneForm
 from .models import Phenotype, Genes
 
 
@@ -28,10 +28,7 @@ def js_info_table(request):
 
 
 def about(request):
-    print('!!!!!!!!')
-    print(request)
-    print('11111111')
-    return render(request, 'go/about.html', {'title': 'GO_antology', 'about': 'Что такое сайт GO_antology'})
+    return render(request, 'go/about.html', {'title': 'GO_antology', 'about': 'Что такое сайт GeneOntology'})
 
 def go_show(request):
     return HttpResponse('z')
@@ -61,23 +58,15 @@ def gene(request, ph_slug):
             l.append(rs.rs_name)
         cont[x.gene] = l
 
-
-
-    print(cont)
-
     return render(request, 'go/genes.html', {'title': 'genes', 'pheno_slug': pheno_slug, 'contented': 'GENES!', 'genes': cont})
 
 
 
 def add(request):
     if request.POST:
-#        print(request.POST)
         all_pheno=Phenotype.objects.all()
         for p in all_pheno:
             if p.pheno == request.POST['pheno']:
-#                print(dir(p))
-#                print(request.POST['pheno'])
-
                 g = Genes.objects.create(gene=request.POST['gene'], slug=slugify(request.POST['gene']))
                 #Genes.link_pheno=Genes.objects.get(gene=request.POST['gene'])
                 g.link_to_pheno.add(p)   #Phenotype.objects.get(pheno=request.POST['pheno']))
@@ -92,6 +81,19 @@ def add_tests(request):
     else:
         form = AddBioInfo()
     return render(request, 'go/add_tests.html', {'form': form})
+
+
+def add_gene(request):
+    if request.method == "POST":
+        form = AddGeneForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("js_info_table")
+    else:
+        form = AddGeneForm()
+
+    data = {'title': 'add_gene', 'form': form}
+    return render(request, 'go/add.html', data)
 
 
 def check(request):

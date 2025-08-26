@@ -7,7 +7,7 @@ class Phenotype(models.Model):
     pheno = models.CharField(max_length=30)
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_pheno', unique=True)
+#    slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_pheno', unique=True)
 
     def __str__(self):
         return self.pheno
@@ -23,7 +23,7 @@ class Genes(models.Model):
     gene=models.CharField(max_length=30)
     time_create=models.DateTimeField(auto_now_add=True)
     time_update=models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_gene', unique=True)
+#    slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_gene', unique=True)
     link_to_pheno = models.ManyToManyField(Phenotype, blank=True, related_name='link_pheno')
     transcript = models.OneToOneField('Transcripts', on_delete=models.PROTECT, null=True, blank=True, related_name='tr_of_gene')
 
@@ -34,10 +34,10 @@ class Genes(models.Model):
 
 
 class Rs(models.Model):
-    rs_name=models.CharField(max_length=30)
+    rs_name = models.CharField(max_length=30)
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_rs', unique=True)
+#    slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_rs', unique=True)
     link_to_gene = models.ForeignKey(Genes, on_delete=models.PROTECT, null=True, related_name='rsset')
 
 
@@ -45,7 +45,7 @@ class Rs(models.Model):
         return self.rs_name
 
 class Consorcium(models.Model):
-    cons_name=models.CharField(max_length=100)
+    cons_name = models.CharField(max_length=100)
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
     slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_cons', unique=True)
@@ -57,7 +57,7 @@ class Transcripts(models.Model):
     tr_name = models.CharField(max_length=40)
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_tr', unique=True)
+#    slug = models.SlugField(max_length=30, db_index=True, verbose_name='URL_tr', unique=True)
 
     def __str__(self):
         return self.tr_name

@@ -23,7 +23,7 @@ from go import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', views.base_page, name='base_page'),
+    path('', views.about),
     path('go/', include('go.urls')),
     path('users/', include('users.urls', namespace="users")),
 
