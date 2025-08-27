@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "bootstrap5",
     "django_tables2",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "antology.urls"
@@ -129,3 +131,5 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+INTERNAL_IPS = ['127.0.0.1',]

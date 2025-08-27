@@ -8,8 +8,8 @@
     <thead>
         <tr>
             <th>Gene_name</th>
-            <th>rs_id</th>
             <th>Phenotype</th>
+            <th>rs_id</th>
             <th>Transcript</th>
         </tr>
     </thead>
@@ -17,12 +17,6 @@
         {% for line in db_data %}
         <tr>
             <td>{{ line.gene }}</td>
-            {% if line.rsset.all %}
-                <td>{{ line.rsset.all|join:" , " }}</td>
-            {% endif %}
-            {% if not line.rsset.all %}
-                <td class="text-danger">No data</td>
-            {% endif %}
 
             {% if line.link_to_pheno.all %}
                 <td>{{ line.link_to_pheno.all|join:" , " }}</td>
@@ -30,6 +24,16 @@
             {% if not line.link_to_pheno.all %}
                 <td class="text-danger">No data</td>
             {% endif %}
+
+
+            {% if line.rsset.all %}
+                <td>{{ line.rsset.all|join:" , " }}</td>
+            {% endif %}
+            {% if not line.rsset.all %}
+                <td class="text-danger">No data</td>
+            {% endif %}
+
+
 
             {% if line.transcript %}
                 <td>{{ line.transcript }}</td>

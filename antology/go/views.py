@@ -17,14 +17,14 @@ def contacts_show(request):
     return render(request, "go/contacts.html", {"title": "Contacts"})
 
 def info_table(request):
-    model = Genes.objects.all()
+    model = Genes.objects.all().prefetch_related("link_to_pheno")
     table = GenesTable(model)
     return render(request, "go/info_table.html", {"model": model, "table": table})
 
 
 def js_info_table(request):
     db_data = Genes.objects.all()
-    return render(request, "go/js_info_table.html", {"title":"JS_table", "db_data": db_data})
+    return render(request, "go/js_info_table.html", {"title": "JS_table", "db_data": db_data})
 
 
 def about(request):
@@ -96,9 +96,3 @@ def add_gene(request):
     return render(request, 'go/add.html', data)
 
 
-def check(request):
-    if request.GET:
-        r=request.GET
-        r=r['t']
-        print(r)
-    return HttpResponse(f"<h1>{r}</h1>")

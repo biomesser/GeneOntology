@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a855cb5-9781-48f9-ac41-23ff097ec3ef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/antology/go/templates/go/base1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/antology/go/templates/go/genes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/antology/go/templates/go/includes/nav.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/antology/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/antology/antology/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/antology/antology/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/antology/go/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/antology/go/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/antology/antology/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/antology/antology/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/antology/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/antology/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/antology/go/templates/go/js_info_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/antology/go/templates/go/js_info_table.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/antology/go/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/antology/go/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,10 +42,11 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "Python.antology.executor": "Run",
+    "Python.views.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/creck/Documents/my_django_projects/test_antology/antology/go/templates/go",
+    "last_opened_file_path": "/home/creck/Documents/my_django_projects/final_sitewomen/pythonProject",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
@@ -55,11 +55,12 @@
       <recent name="$PROJECT_DIR$/antology/go/templates/go" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/antology/" />
       <recent name="$PROJECT_DIR$/antology/go/templates/go" />
       <recent name="$PROJECT_DIR$/antology" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.antology">
     <configuration name="antology" type="PythonConfigurationType" factoryName="Python">
       <module name="test_antology" />
       <option name="ENV_FILES" value="" />
@@ -75,7 +76,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/antology/manage.py" />
-      <option name="PARAMETERS" value="runserver" />
+      <option name="PARAMETERS" value="runserver 8001" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -83,6 +84,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="test_antology" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/antology/go" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/antology/go/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
